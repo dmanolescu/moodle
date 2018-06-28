@@ -4126,6 +4126,11 @@ function delete_user(stdClass $user) {
     $updateuser->email        = md5($user->username);// Store hash of username, useful importing/restoring users.
     $updateuser->idnumber     = '';                  // Clear this field to free it up.
     $updateuser->picture      = 0;
+    $updateuser->lastip      = 0;
+    $updateuser->phone1      = '';
+    $updateuser->phone2      = '';
+    $updateuser->address      = '';
+    $updateuser->url      = '';
     $updateuser->timemodified = time();
 
     // Don't trigger update event, as user is being deleted.
